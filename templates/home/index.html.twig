@@ -23,4 +23,19 @@
         </div>
     </section>
 
+    <section class="products_container" id="products">
+    <h2>Nos produits</h2>
+    <div class="products_grid">
+        {% for product in products %}
+            <div class="product_card">
+                <img src="{{ asset(product.image) }}" alt="{{ product.name }}">
+                <h3>{{ product.name }}</h3>
+                <p class="desc">{{ product.description }}</p>
+                <p class="price">{{ product.price }} €</p>
+                <a href="#" class="btn">Voir le produit</a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
 {% endblock %}
