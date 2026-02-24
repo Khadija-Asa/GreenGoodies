@@ -43,6 +43,9 @@
 
 /* responsive */
 @media (max-width: 1024px) {
+    .navbar {
+        padding: 31px 20px;
+    }
     .nav_links {
         display: none;
         flex-direction: column;
@@ -50,8 +53,9 @@
         position: absolute;
         top: 85px;
         background-color: var(--White);
-        padding: 40px 200px;
         right: 0;
+        width: 60vw;
+        height: 50vh;
         border-radius: 5px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         z-index: 1000;
