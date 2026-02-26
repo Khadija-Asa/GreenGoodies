@@ -13,7 +13,7 @@ class ProductFixtures extends Fixture
         $productsData = [
             [
                 'image' => 'products/p1.jpg',
-                'name' => 'Kit d\hygiène recyclable',
+                'name' => "Kit d'hygiène recyclable",
                 'description' => 'Pour une salle de bain éco-friendly',
                 'price' => 24.99,
             ],
@@ -26,7 +26,7 @@ class ProductFixtures extends Fixture
             [
                 'image' => 'products/p3.jpg',
                 'name' => 'Gourde en bois',
-                'description' => '50cl, bois d\olivier',
+                'description' => "50cl, bois d'olivier",
                 'price' => 16.90,
             ],
             [
@@ -56,7 +56,7 @@ class ProductFixtures extends Fixture
             [
                 'image' => 'products/p8.jpg',
                 'name' => 'Nécessaire, déodorant Bio',
-                'description' => '50ml déodorant à l\eucalyptus',
+                'description' => "50ml déodorant à l'eucalyptus",
                 'price' => 8.50,
             ],
             [

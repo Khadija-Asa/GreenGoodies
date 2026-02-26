@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/home.css"/>
+{% endblock %}
+
 {% block title %}GreenGoodies - Accueil{% endblock %}
 
 {% block body %}
@@ -29,10 +33,14 @@
         {% for product in products %}
             <div class="product_card">
                 <img src="{{ asset(product.image) }}" alt="{{ product.name }}">
-                <h3>{{ product.name }}</h3>
-                <p class="desc">{{ product.description }}</p>
-                <p class="price">{{ product.price }} €</p>
-                <a href="#" class="btn">Voir le produit</a>
+
+                <div class="card_text">
+                    <h3>{{ product.name }}</h3>
+                    <p class="desc">{{ product.description }}</p>
+                    <p class="price">{{ product.price }} €</p>
+                </div>
+
+                    <a href="#" class="card_btn">Voir le produit</a>
             </div>
         {% endfor %}
     </div>

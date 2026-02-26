@@ -8,9 +8,9 @@
         <title>{% block title %}Green Goodies{% endblock %}</title>
 
         {# css #}
-        <link rel="stylesheet" href="{{ ('css/main.css') }}"/>
-        <link rel="stylesheet" href="/css/header.css" id="main-css">
-        <link rel="stylesheet" href="/css/home.css" id="main-css">
+<link rel="stylesheet" href="/css/main.css"/>
+<link rel="stylesheet" href="/css/header.css"/>
+{% block stylesheets %}{% endblock %}
 
         {# favicon #}
         <link rel="icon" type="image/png" href="{{ ('images/logo_favicon.png') }}">
@@ -27,11 +27,26 @@
 
 
     {# auto refresh #}
-    <script> setInterval(() => { 
-        const css = document.getElementById("main-css");
-        const currentHref = css.getAttribute("href").split("?")[0]; 
-        css.setAttribute("href", currentHref + "?v=" + new Date()
-        .getTime()); }, 1000); 
+    <script>
+        const cssFiles = {};
+
+        document.querySelectorAll('link[rel="stylesheet"]').forEach(css => {
+            cssFiles[css.getAttribute("href")] = null;
+        });
+
+        setInterval(() => {
+            document.querySelectorAll('link[rel="stylesheet"]').forEach(css => {
+                const href = css.getAttribute("href").split("?")[0];
+                fetch(href + "?v=" + new Date().getTime(), { method: 'HEAD' })
+                    .then(res => {
+                        const lastModified = res.headers.get('last-modified');
+                        if (cssFiles[href] && cssFiles[href] !== lastModified) {
+                            css.setAttribute("href", href + "?v=" + new Date().getTime());
+                        }
+                        cssFiles[href] = lastModified;
+                    });
+            });
+        },);
     </script>
 
     {# burger menu #}

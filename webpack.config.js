@@ -73,4 +73,11 @@ Encore
     //.autoProvidejQuery()
 ;
 
+if (Encore.isDevServer()) {
+    Encore.configureDevServerOptions(options => {
+        options.liveReload = true;
+        options.allowedHosts = 'all';
+    });
+}
+
 module.exports = Encore.getWebpackConfig();
