@@ -1,0 +1,26 @@
+/* footer */
+.footer {
+    height: 81px;
+    background-color: var(--White);
+    display: flex;
+    align-items: center;
+}
+
+.footer_text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_text p {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* responsive */
+@media (min-width: 600px) {
+  .footer_text {
+    justify-content: flex-end;
+    padding-right: 5rem;
+  }
+}

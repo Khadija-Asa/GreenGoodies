@@ -8,23 +8,23 @@
         <title>{% block title %}Green Goodies{% endblock %}</title>
 
         {# css #}
-<link rel="stylesheet" href="/css/main.css"/>
-<link rel="stylesheet" href="/css/header.css"/>
-{% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="/css/main.css"/>
+        <link rel="stylesheet" href="/css/header.css"/>
+        <link rel="stylesheet" href="/css/footer.css"/>
+        {% block stylesheets %}{% endblock %}
 
         {# favicon #}
         <link rel="icon" type="image/png" href="{{ ('images/logo_favicon.png') }}">
     </head>
     <body>
+    
         <main>
             {% include 'partials/_header.html.twig' %}
 
             {% block body %}{% endblock %}
+
+            {% include 'partials/_footer.html.twig' %}
         </main>
-
-
-
-
 
     {# auto refresh #}
     <script>
