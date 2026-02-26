@@ -1,0 +1,136 @@
+.login-wrapper {
+  display: flex;
+  width: 100%;
+  height: 988px;
+}
+
+/* image */
+.login-image {
+  flex: 0 0 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.login-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* form */
+.login-panel {
+  flex: 0 0 50%;
+  display: flex;
+  padding: 7rem;
+  background: var(--Light-Beige);
+}
+
+.login-box {
+  width: 100%;
+  max-width: 479px;
+  height: 67px;
+}
+
+.login-title {
+  color: var(--Dark-Gray);
+  margin-bottom: 2rem;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 20px;
+}
+
+.login-field {
+  margin-bottom: 2rem;
+}
+
+.login-field label {
+  display: block;
+  color: var(--Gray);
+  margin-bottom: 0.6rem;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.login-field input[type="email"],
+.login-field input[type="password"] {
+  width: 100%;
+  height: 67px;
+  padding-left: 1rem;
+  border: 1px solid var(--Gray);
+  background: var(--White);
+  font-weight: 300;
+  outline: none;
+}
+
+.login-field input:focus {
+  border-color: var(--Light-Gray);
+}
+
+/* alert */
+.login-alert {
+  background: #fde8e8;
+  color: #9b2c2c;
+  border-left: 3px solid #9b2c2c;
+  padding: .8rem 1rem;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+  border-radius: 2px;
+}
+
+/* button */
+.login-btn {
+  width: 100%;
+  height: 67px;
+  background: var(--Connect);
+  color: var(--White);
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.login-btn:hover {
+  background: var(--Black);
+}
+
+/* register */
+.login-register {
+  text-align: center;
+  font-weight: 400;
+  font-size: clamp(0.625rem, 0.5536rem + 0.3571vw, 0.875rem);
+}
+
+.login-register a {
+  color: var(--Gray);
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-underline-offset: 4px;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+  }
+  .login-wrapper {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .login-image {
+    flex: none;
+    width: 100%;
+    height: 200px;
+  }
+  .login-panel {
+    flex: 1;
+    padding: 2rem 1.5rem;
+    align-items: flex-start;
+  }
+  .login-box {
+    max-width: 100%;
+  }
+}
