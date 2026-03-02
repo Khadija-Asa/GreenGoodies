@@ -70,6 +70,12 @@
   border-color: var(--Light-Gray);
 }
 
+.register-panel ul {
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+/* cgu */
 .register-terms {
   display: flex;
   align-items: center;
@@ -86,6 +92,7 @@
   accent-color: var(--Connect);
 }
 
+/* button */
 .register-btn {
   width: 100%;
   height: 67px;
@@ -103,6 +110,7 @@
   background: var(--Black);
 }
 
+/* link */
 .register-link {
   text-align: center;
   margin-top: 1.5rem;
