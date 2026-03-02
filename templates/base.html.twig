@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="/css/header.css"/>
         <link rel="stylesheet" href="/css/footer.css"/>
         <link rel="stylesheet" href="/css/login.css"/>
+        <link rel="stylesheet" href="/css/register.css"/>
         {% block stylesheets %}{% endblock %}
 
         {# favicon #}
@@ -28,27 +29,27 @@
         </main>
 
     {# auto refresh #}
-    <script>
-        const cssFiles = {};
+    {# // <script>
+    //     const cssFiles = {};
 
-        document.querySelectorAll('link[rel="stylesheet"]').forEach(css => {
-            cssFiles[css.getAttribute("href")] = null;
-        });
+    //     document.querySelectorAll('link[rel="stylesheet"]').forEach(css => {
+    //         cssFiles[css.getAttribute("href")] = null;
+    //     });
 
-        setInterval(() => {
-            document.querySelectorAll('link[rel="stylesheet"]').forEach(css => {
-                const href = css.getAttribute("href").split("?")[0];
-                fetch(href + "?v=" + new Date().getTime(), { method: 'HEAD' })
-                    .then(res => {
-                        const lastModified = res.headers.get('last-modified');
-                        if (cssFiles[href] && cssFiles[href] !== lastModified) {
-                            css.setAttribute("href", href + "?v=" + new Date().getTime());
-                        }
-                        cssFiles[href] = lastModified;
-                    });
-            });
-        },);
-    </script>
+    //     setInterval(() => {
+    //         document.querySelectorAll('link[rel="stylesheet"]').forEach(css => {
+    //             const href = css.getAttribute("href").split("?")[0];
+    //             fetch(href + "?v=" + new Date().getTime(), { method: 'HEAD' })
+    //                 .then(res => {
+    //                     const lastModified = res.headers.get('last-modified');
+    //                     if (cssFiles[href] && cssFiles[href] !== lastModified) {
+    //                         css.setAttribute("href", href + "?v=" + new Date().getTime());
+    //                     }
+    //                     cssFiles[href] = lastModified;
+    //                 });
+    //         });
+    //     },);
+    // </script> #}
 
     {# burger menu #}
     <script>

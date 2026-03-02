@@ -25,32 +25,37 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            // verify password
-            $plainPassword = $form->get('plainPassword')->getData();
-            $confirmPassword = $form->get('confirmPassword')->getData();
+            // // verify password
+            // $plainPassword = $form->get('plainPassword')->getData();
+            // $confirmPassword = $form->get('confirmPassword')->getData();
 
-            if ($plainPassword !== $confirmPassword) {
-                $form->get('confirmPassword')->addError(new FormError('Les mots de passe ne correspondent pas.'));
-            }
+            // if ($plainPassword !== $confirmPassword) {
+            //     $form->get('confirmPassword')->addError(new FormError('Les mots de passe ne correspondent pas.'));
+            // }
 
-            // verify CGU
-            $acceptedTerms = $form->get('acceptedTerms')->getData();
-            if (!$acceptedTerms) {
-                $form->get('acceptedTerms')->addError(new FormError('Vous devez accepter les CGU.'));
-            }
+            // // verify CGU
+            // $acceptedTerms = $form->get('acceptedTerms')->getData();
+            // if (!$acceptedTerms) {
+            //     $form->get('acceptedTerms')->addError(new FormError('Vous devez accepter les CGU.'));
+            // }
 
             // if OK -> register
-            if ($form->isValid()) {
-                $user->setPassword($userPasswordHasher->hashPassword($user, $plainPassword));
-                $user->setAcceptedTerms(true);
+            // if ($form->isValid()) {
+            //     $user->setPassword($userPasswordHasher->hashPassword($user, $plainPassword));
+            //     $user->setAcceptedTerms(true);
 
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                    $user,
+                    $user->getPlainPassword()
+                )
+            );
                 $entityManager->persist($user);
                 $entityManager->flush();
 
                 // Connexion automatique après inscription
                 return $security->login($user, LoginFormAuthenticator::class, 'main');
-            }
-        }
+            }  
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form,
