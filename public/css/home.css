@@ -164,3 +164,81 @@
         width: 100%;
     }
 }
+
+/* ETHOS */
+.ethos {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.beliefs,
+.values {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.beliefs {
+  background-color: var(--Beige);
+}
+
+.values {
+  background-color: var(--Green);
+}
+
+.beliefs_text,
+.values_text {
+  padding: 4rem;
+}
+
+.beliefs_text h3,
+.values_text h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
+}
+
+.beliefs_text p,
+.values_text p {
+  font-weight: 300;
+  font-style: Light;
+  font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
+}
+
+.beliefs_text p {
+  max-width: 425px ;
+}
+
+.values_text p {
+  max-width: 465px;
+}
+
+.beliefs img,
+.values img {
+  width: 487px;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .beliefs,
+  .values {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .beliefs img,
+  .values img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  .beliefs {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+
+

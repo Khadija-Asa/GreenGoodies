@@ -23,27 +23,55 @@
             </div>
         </div>
         <div class="hero_img">
-            <img src="images/hero_img.jpg" alt="Image d'illustration">
+            <img src="images/hero_img.jpg" alt="Image d'illustration" loading="lazy">
         </div>
     </section>
 
     <section class="products_container" id="products">
-    <h2>Nos produits</h2>
-    <div class="products_grid">
-        {% for product in products %}
-            <div class="product_card">
-                <img src="{{ asset(product.image) }}" alt="{{ product.name }}">
+        <h2>Nos produits</h2>
+        <div class="products_grid">
+            {% for product in products %}
+                <div class="product_card">
+                    <img src="{{ asset(product.image) }}" alt="{{ product.name }}" loading="lazy">
 
-                <div class="card_text">
-                    <h3>{{ product.name }}</h3>
-                    <p class="desc">{{ product.description }}</p>
-                    <p class="price">{{ product.price }} €</p>
+                    <div class="card_text">
+                        <h3>{{ product.name }}</h3>
+                        <p class="desc">{{ product.description }}</p>
+                        <p class="price">{{ product.price }} €</p>
+                    </div>
+
+                        <a href="#" class="card_btn">Voir le produit</a>
                 </div>
+            {% endfor %}
+        </div>
+    </section>
 
-                    <a href="#" class="card_btn">Voir le produit</a>
+    <section class="ethos">
+        <div class="beliefs">
+            <div class="beliefs_text">
+                <h3>Notre conviction</h3>
+                <br>
+                <p>
+                    Chez GreenGoodies, nous croyons en un monde où le commerce peut être synonyme de bien-être 
+                    pour la planète et ses habitants. Notre mission est de vous proposer une sélection rigoureuse
+                    de produits qui allient qualité, durabilité et éthique
+                </p>
             </div>
-        {% endfor %}
-    </div>
-</section>
+            <img src="images/flower_img.jpg" alt="Illustration de fleurs">
+        </div>
+
+        <div class="values">
+            <img src="images/green_plastic.jpg" alt="Illustration sac plastique">
+            <div class="values_text">
+                <h3>Nos valeurs</h3>
+                <br>
+                <p>
+                    Durabilité : Nous sélectionnons soigneusement des produits qui respectent l'environnement et favorisent la durabilité. <br>
+                    Éthique : Nous nous engageons à travailler avec des partenaires et des fournisseurs qui partagent nos valeurs éthiques. <br>
+                    Écologie : Nous encourageons des pratiques respectueuses de l'écosystème et privilégions les matériaux écologiques. 
+                </p>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
