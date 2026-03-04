@@ -1,20 +1,67 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CartController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<main class="cart_page">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1 class="cart_title">Mon panier</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/home/khadidja/git/GreenGoodies/src/Controller/CartController.php</code></li>
-        <li>Your template at <code>/home/khadidja/git/GreenGoodies/templates/cart/index.html.twig</code></li>
-    </ul>
-</div>
+    {% if cartItems is empty %}
+        <div class="cart_empty">
+            <p>Votre panier est vide.</p>
+            <a href="{{ path('app_home') }}" class="btn_validate">Continuer mes achats</a>
+        </div>
+    {% else %}
+
+        <div class="cart_clear_wrapper">
+            <a href="{{ path('app_cart_clear') }}"
+               class="btn_clear"
+               onclick="return confirm('Êtes-vous sûr de vouloir vider votre panier ?')">
+                &times; Vider le panier
+            </a>
+        </div>
+
+        <div class="cart_card">
+            {% set total = 0 %}
+            {% for item in cartItems %}
+                {% set sousTotal = item.product.price * item.quantity %}
+                {% set total = total + sousTotal %}
+
+                <div class="cart_item {% if not loop.last %}cart_item_border{% endif %}">
+                    <div class="cart_item_image_wrapper">
+                        <img
+                            src="{{ asset(item.product.image) }}"
+                            alt="{{ item.product.name }}"
+                            class="cart_item_image"
+                        >
+                    </div>
+                    <div class="cart_item_details">
+                        <p class="cart_item_name">{{ item.product.name }}</p>
+                        <p class="cart_item_qty">Quantité : {{ item.quantity }}</p>
+                        <p class="cart_item_price">{{ (item.product.price * item.quantity)|number_format(2, ',', ' ') }}&nbsp;€</p>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+            <div class="cart_summary">
+                <div class="cart_summary_line">
+                    <span class="cart_summary_label">Total panier :</span>
+                    <span class="cart_summary_total">{{ total|number_format(2, ',', ' ') }}&nbsp;€</span>
+                </div>
+                <div class="cart_summary_line">
+                    <span></span>
+                    <span class="cart_shipping_label">Frais de livraison : Offert</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart_validate_wrapper">
+            <a href="{{ path('app_cart_validate') }}" class="btn_validate">
+                Valider la commande
+            </a>
+        </div>
+
+    {% endif %}
+
+</main>
 {% endblock %}

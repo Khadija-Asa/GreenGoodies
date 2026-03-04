@@ -57,6 +57,12 @@ class ProductFixtures extends Fixture
                 'image' => 'products/p8.jpg',
                 'name' => 'Nécessaire, déodorant Bio',
                 'description' => "50ml déodorant à l'eucalyptus",
+                'longDescription' => 
+                "Déodorant Nécessaire, une formule révolutionnaire composée exclusivement d'ingrédients naturels pour une protection efficace et bienfaisante. 
+
+                Chaque flacon de 50 ml renferme le secret d'une fraîcheur longue durée, sans compromettre votre bien-être ni l'environnement. Conçu avec soin, ce déodorant allie le pouvoir antibactérien des extraits de plantes aux vertus apaisantes des huiles essentielles, assurant une sensation de confort toute la journée.
+                
+                Grâce à sa formule non irritante et respectueuse de votre peau, Nécessaire offre une alternative saine aux déodorants conventionnels, tout en préservant l'équilibre naturel de votre corps.",
                 'price' => 8.50,
             ],
             [
@@ -73,6 +79,7 @@ class ProductFixtures extends Fixture
             $product->setImage($data['image']);
             $product->setName($data['name']);
             $product->setDescription($data['description']);
+            $product->setLongDescription($data['longDescription'] ?? '');
             $product->setPrice($data['price']);
 
             $manager->persist($product);

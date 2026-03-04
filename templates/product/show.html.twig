@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="product_page">
+    <div class="product_container">
+
+        <div class="product_image_wrapper">
+            <img src="{{ asset(product.image) }}" alt="{{ product.name }}" loading="lazy" class="product_image">
+        </div>
+
+        <div class="product_info">
+
+            <h1 class="product_name">{{ product.name }}</h1>
+            <p class="product_price">{{ product.price|number_format(2, ',', ' ') }}&nbsp;€</p>
+
+            <div class="product_description">
+                <span class="description_label">Description</span>
+                <div class="description_text">
+                    {{ product.longDescription|nl2br }}
+                </div>
+            </div>
+
+            <div class="product_cart">
+                {% if app.user %}
+                    {{ form_start(form, {'attr': {'class': 'cart_form'}}) }}
+                        <div class="quantity_wrapper">
+                            <label for="{{ form.quantity.vars.id }}" class="quantity_label">Quantité</label>
+                            {{ form_widget(form.quantity, {'attr': {'class': 'quantity_input', 'min': '0', 'placeholder': '0'}}) }}
+                        </div>
+                        <button type="submit" class="btn_cart">
+                            {{ cartItem ? 'Mettre à jour' : 'Ajouter au panier' }}
+                        </button>
+                    {{ form_end(form) }}
+                {% else %}
+                    <a href="{{ path('app_login') }}" class="btn_cart btn_cart_login">
+                        Se connecter pour acheter
+                    </a>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -40,7 +40,7 @@
                         <p class="price">{{ product.price }} €</p>
                     </div>
 
-                        <a href="#" class="card_btn">Voir le produit</a>
+                        <a href="{{ path('app_product_show', {id: product.id}) }}" class="card_btn">Voir le produit</a>
                 </div>
             {% endfor %}
         </div>
