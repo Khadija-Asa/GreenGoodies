@@ -1,20 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccountController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="account_page">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1 class="account_title">Mon compte</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/home/khadidja/git/GreenGoodies/src/Controller/AccountController.php</code></li>
-        <li>Your template at <code>/home/khadidja/git/GreenGoodies/templates/account/index.html.twig</code></li>
-    </ul>
+    {# ── Commandes ── #}
+    <div class="account_card">
+        <h2 class="account_card_title">Mes commandes</h2>
+
+        {% if orders is empty %}
+            <p class="account_empty">Aucune commande pour le moment.</p>
+        {% else %}
+            <table class="account_table">
+                <thead>
+                    <tr>
+                        <th class="account_th">N°</th>
+                        <th class="account_th">Date</th>
+                        <th class="account_th account_th_right">Prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr class="account_tr">
+                        <td class="account_td">{{ '%02d'|format(order.id) }}</td>
+                        <td class="account_td">{{ order.createdAt|date('d/m/Y') }}</td>
+                        <td class="account_td account_td_right">{{ order.totalPrice|number_format(2, ',', ' ') }}&nbsp;€</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+
+    {# ── Accès API ── #}
+    <div class="account_card">
+        <h2 class="account_card_title">Mon accès API</h2>
+        <a href="{{ path('app_account_api_toggle') }}" class="account_btn">
+            {% if app.user.apiAccess %}
+                Désactiver mon accès API
+            {% else %}
+                Activer mon accès API
+            {% endif %}
+        </a>
+    </div>
+
+    {# ── Supprimer compte ── #}
+    <div class="account_card">
+        <a href="{{ path('app_account_delete') }}"
+           class="account_btn"
+           onclick="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ?')">
+            Supprimer mon compte
+        </a>
+    </div>
+
 </div>
 {% endblock %}
