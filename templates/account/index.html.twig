@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="account_page">
+<section class="account_page">
 
     <h1 class="account_title">Mon compte</h1>
 
-    {# ── Commandes ── #}
+    {# card #}
     <div class="account_card">
         <h2 class="account_card_title">Mes commandes</h2>
 
@@ -33,7 +33,7 @@
         {% endif %}
     </div>
 
-    {# ── Accès API ── #}
+    {# access api #}
     <div class="account_card">
         <h2 class="account_card_title">Mon accès API</h2>
         <a href="{{ path('app_account_api_toggle') }}" class="account_btn">
@@ -45,7 +45,7 @@
         </a>
     </div>
 
-    {# ── Supprimer compte ── #}
+    {# delete account #}
     <div class="account_card">
         <a href="{{ path('app_account_delete') }}"
            class="account_btn"
@@ -54,5 +54,12 @@
         </a>
     </div>
 
-</div>
+    {# api message #}
+    {% for message in app.flashes('success') %}
+        <div class="api_flash">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+</section>
 {% endblock %}

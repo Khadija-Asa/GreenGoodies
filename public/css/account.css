@@ -18,6 +18,26 @@
   color: #1a1a18;
 }
 
+/* api message */
+.api_flash {
+    width: 100%;
+    max-width: 480px;
+    background: #3a3a38;
+    color: #f5f3ef;
+    padding: 12px 20px;
+    border-radius: 2px;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+    animation: flash_fade 3s ease forwards;
+}
+
+@keyframes flash_fade {
+    0%   { opacity: 1; }
+    70%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 /* card */
 .account_card {
   width: 100%;

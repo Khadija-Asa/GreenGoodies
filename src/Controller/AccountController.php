@@ -52,6 +52,15 @@ final class AccountController extends AbstractController
         $user = $this->getUser();
         $user->setApiAccess(!$user->isApiAccess());
         $em->flush();
+
+
+        // api button event
+        if ($user->isApiAccess()) {
+            $this->addFlash('success', 'Accès API activé.');
+        } else {
+            $this->addFlash('success', 'Accès API désactivé.');
+        }
+
         return $this->redirectToRoute('app_account');
     }
 }
