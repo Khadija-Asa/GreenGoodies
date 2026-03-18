@@ -15,42 +15,84 @@ class ProductFixtures extends Fixture
                 'image' => 'products/p1.jpg',
                 'name' => "Kit d'hygiène recyclable",
                 'description' => 'Pour une salle de bain éco-friendly',
+                'longDescription' => 
+                "Déodorant Nécessaire, une formule révolutionnaire composée exclusivement d'ingrédients naturels pour une protection efficace et bienfaisante. 
+
+                Chaque flacon de 50 ml renferme le secret d'une fraîcheur longue durée, sans compromettre votre bien-être ni l'environnement. Conçu avec soin, ce déodorant allie le pouvoir antibactérien des extraits de plantes aux vertus apaisantes des huiles essentielles, assurant une sensation de confort toute la journée.
+                
+                Grâce à sa formule non irritante et respectueuse de votre peau, Nécessaire offre une alternative saine aux déodorants conventionnels, tout en préservant l'équilibre naturel de votre corps.",
                 'price' => 24.99,
             ],
             [
                 'image' => 'products/p2.jpg',
                 'name' => 'Shot Tropical',
                 'description' => 'Fruits frais, pressés à froid',
+                'longDescription' => 
+                "Déodorant Nécessaire, une formule révolutionnaire composée exclusivement d'ingrédients naturels pour une protection efficace et bienfaisante. 
+
+                Chaque flacon de 50 ml renferme le secret d'une fraîcheur longue durée, sans compromettre votre bien-être ni l'environnement. Conçu avec soin, ce déodorant allie le pouvoir antibactérien des extraits de plantes aux vertus apaisantes des huiles essentielles, assurant une sensation de confort toute la journée.
+                
+                Grâce à sa formule non irritante et respectueuse de votre peau, Nécessaire offre une alternative saine aux déodorants conventionnels, tout en préservant l'équilibre naturel de votre corps.",
                 'price' => 4.50,
             ],
             [
                 'image' => 'products/p3.jpg',
                 'name' => 'Gourde en bois',
                 'description' => "50cl, bois d'olivier",
+                'longDescription' => 
+                "Déodorant Nécessaire, une formule révolutionnaire composée exclusivement d'ingrédients naturels pour une protection efficace et bienfaisante. 
+
+                Chaque flacon de 50 ml renferme le secret d'une fraîcheur longue durée, sans compromettre votre bien-être ni l'environnement. Conçu avec soin, ce déodorant allie le pouvoir antibactérien des extraits de plantes aux vertus apaisantes des huiles essentielles, assurant une sensation de confort toute la journée.
+                
+                Grâce à sa formule non irritante et respectueuse de votre peau, Nécessaire offre une alternative saine aux déodorants conventionnels, tout en préservant l'équilibre naturel de votre corps.",
                 'price' => 16.90,
             ],
             [
                 'image' => 'products/p4.jpg',
                 'name' => 'Disques Démaquillants x3',
                 'description' => 'Solution efficace pour vous démaquiller en douceur',
+                'longDescription' => 
+                "Déodorant Nécessaire, une formule révolutionnaire composée exclusivement d'ingrédients naturels pour une protection efficace et bienfaisante. 
+
+                Chaque flacon de 50 ml renferme le secret d'une fraîcheur longue durée, sans compromettre votre bien-être ni l'environnement. Conçu avec soin, ce déodorant allie le pouvoir antibactérien des extraits de plantes aux vertus apaisantes des huiles essentielles, assurant une sensation de confort toute la journée.
+                
+                Grâce à sa formule non irritante et respectueuse de votre peau, Nécessaire offre une alternative saine aux déodorants conventionnels, tout en préservant l'équilibre naturel de votre corps.",
                 'price' => 19.90,
             ],
             [
                 'image' => 'products/p5.jpg',
                 'name' => 'Bougie Lavande & Patchouli',
                 'description' => 'Cire naturelle',
+                'longDescription' => 
+                "Déodorant Nécessaire, une formule révolutionnaire composée exclusivement d'ingrédients naturels pour une protection efficace et bienfaisante. 
+
+                Chaque flacon de 50 ml renferme le secret d'une fraîcheur longue durée, sans compromettre votre bien-être ni l'environnement. Conçu avec soin, ce déodorant allie le pouvoir antibactérien des extraits de plantes aux vertus apaisantes des huiles essentielles, assurant une sensation de confort toute la journée.
+                
+                Grâce à sa formule non irritante et respectueuse de votre peau, Nécessaire offre une alternative saine aux déodorants conventionnels, tout en préservant l'équilibre naturel de votre corps.",
                 'price' => 32,
             ],
             [
                 'image' => 'products/p6.jpg',
                 'name' => 'Brosse à dent',
                 'description' => 'Bois de hêtre rouge issu de forêts gérées durablement',
+                'longDescription' => 
+                "Déodorant Nécessaire, une formule révolutionnaire composée exclusivement d'ingrédients naturels pour une protection efficace et bienfaisante. 
+
+                Chaque flacon de 50 ml renferme le secret d'une fraîcheur longue durée, sans compromettre votre bien-être ni l'environnement. Conçu avec soin, ce déodorant allie le pouvoir antibactérien des extraits de plantes aux vertus apaisantes des huiles essentielles, assurant une sensation de confort toute la journée.
+                
+                Grâce à sa formule non irritante et respectueuse de votre peau, Nécessaire offre une alternative saine aux déodorants conventionnels, tout en préservant l'équilibre naturel de votre corps.",
                 'price' => 5.40,
             ],
             [
                 'image' => 'products/p7.jpg',
                 'name' => 'Kit couvert en bois',
                 'description' => 'Revêtement Bio en olivier & sac de transport',
+                'longDescription' => 
+                "Déodorant Nécessaire, une formule révolutionnaire composée exclusivement d'ingrédients naturels pour une protection efficace et bienfaisante. 
+
+                Chaque flacon de 50 ml renferme le secret d'une fraîcheur longue durée, sans compromettre votre bien-être ni l'environnement. Conçu avec soin, ce déodorant allie le pouvoir antibactérien des extraits de plantes aux vertus apaisantes des huiles essentielles, assurant une sensation de confort toute la journée.
+                
+                Grâce à sa formule non irritante et respectueuse de votre peau, Nécessaire offre une alternative saine aux déodorants conventionnels, tout en préservant l'équilibre naturel de votre corps.",
                 'price' => 12.30,
             ],
             [
@@ -69,6 +111,12 @@ class ProductFixtures extends Fixture
                 'image' => 'products/p9.jpg',
                 'name' => 'Savon Bio',
                 'description' => 'Thé, Orange & Girofle',
+                'longDescription' => 
+                "Déodorant Nécessaire, une formule révolutionnaire composée exclusivement d'ingrédients naturels pour une protection efficace et bienfaisante. 
+
+                Chaque flacon de 50 ml renferme le secret d'une fraîcheur longue durée, sans compromettre votre bien-être ni l'environnement. Conçu avec soin, ce déodorant allie le pouvoir antibactérien des extraits de plantes aux vertus apaisantes des huiles essentielles, assurant une sensation de confort toute la journée.
+                
+                Grâce à sa formule non irritante et respectueuse de votre peau, Nécessaire offre une alternative saine aux déodorants conventionnels, tout en préservant l'équilibre naturel de votre corps.",
                 'price' => 18.90,
             ],  
         ];
