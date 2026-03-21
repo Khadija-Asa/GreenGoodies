@@ -13,7 +13,7 @@ security:
             pattern: ^/(_profiler|_wdt|assets|build)/
             security: false
 
-        # ── Firewall API ──
+        # firewall api
         api:
             pattern: ^/api
             stateless: true
